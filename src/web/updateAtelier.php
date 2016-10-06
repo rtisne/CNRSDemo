@@ -3,7 +3,7 @@ include_once "connexion.php";
 
 if(isset($_GET['id'])) {
     $req = $db->prepare('SELECT a.* FROM ateliers a WHERE a.id = ?');
-    $req->execute(array($_GET['postId']));
+    $req->execute(array($_GET['id']));
     $donnees = $req->fetch();
     if($donnees == null || !isset($donnees))
         header('Location: listAtelier.php');
